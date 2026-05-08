@@ -1,0 +1,10 @@
+name: Trigger Lab
+on: [push, pull_request]
+
+jobs:
+  check-event:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show Event Name
+        run: echo "This workflow was triggered by a ${{ github.event_name }} event!"
+        
