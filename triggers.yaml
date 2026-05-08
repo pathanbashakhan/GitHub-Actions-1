@@ -7,4 +7,7 @@ jobs:
     steps:
       - name: Show Event Name
         run: echo "This lab is dedicated for triggers"
+
+      - name: tell me
+        run: echo "i am telling all answers"  
         
