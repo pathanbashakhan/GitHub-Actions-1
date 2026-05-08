@@ -1,6 +1,6 @@
 name: Trigger Lab
 on: 
- [push]
+  push
 
 jobs:
  check-event:
@@ -8,4 +8,4 @@ jobs:
     steps:
      - name: Show Event Name
        run: echo "This lab is dedicated for triggers"
-       
+
