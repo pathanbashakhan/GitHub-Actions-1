@@ -1,8 +1,7 @@
 name: pathans-lab
 
 on:
- push:
-   branches: main
+ workflow_dispatch: 
 
 jobs:
   job1:
@@ -12,4 +11,5 @@ jobs:
      - name: kitkat
        if: ${{github.event_name == 'push'}}
        run: |
-         echo "this is kitkat"
+         echo "this is kitkat-${{github.event_name}}"
+         

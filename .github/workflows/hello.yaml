@@ -1,8 +1,9 @@
 name: pathans-lab
 
 on:
- push:
-   branches: main
+  workflow_dispatch:
+ #push:
+  # branches: main
 
 jobs:
   job1:
@@ -34,5 +35,5 @@ jobs:
         run: | 
           echo "${{needs.job1.outputs.op1}}"
           echo "${{needs.job1.outputs.op2}}"
-          
+
     
