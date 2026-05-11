@@ -10,6 +10,6 @@ jobs:
    
    steps:
      - name: kitkat
+       if: ${{github.event_name == 'push'}}
        run: |
          echo "this is kitkat"
-         
