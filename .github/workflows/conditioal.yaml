@@ -10,6 +10,7 @@ on:
 jobs:
   job1:
    runs-on: ubuntu-latest
+   if: inputs.name == 'pathan'
    env: 
     job: "devops"
    steps:
