@@ -11,7 +11,18 @@ jobs:
    steps:
     - name: yamdooing
       id: pv
-      run: echo "name=basha" >> "$GITHUB_OUTPUT"
+      run: |
+        echo "name=basha" >> "$GITHUB_OUTPUT"
+        echo "job=devops" >> "$GITHUB_OUTPUT"
+        echo "$GITHUB_OUTPUT"
     
     - name: yamlfile
-      run: echo "${{steps.pv.outputs.name}}"
+      id: hi
+      run: |
+        echo "friend=akhil" >> "$GITHUB_OUTPUT"
+        echo "name is ${{steps.pv.outputs.name}}"
+        echo "job is ${{steps.pv.outputs.job}}"
+        echo "$GITHUB_OUTPUT"
+
+
+    
