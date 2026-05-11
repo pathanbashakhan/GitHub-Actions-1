@@ -7,22 +7,32 @@ on:
 jobs:
   job1:
    runs-on: ubuntu-latest
-
+   outputs: 
+    op1: ${{steps.pv.outputs.name}}
+    op2: ${{steps.pv.outputs.job}}
    steps:
     - name: yamdooing
       id: pv
       run: |
         echo "name=basha" >> "$GITHUB_OUTPUT"
         echo "job=devops" >> "$GITHUB_OUTPUT"
-        echo "$GITHUB_OUTPUT"
+       
     
     - name: yamlfile
-      id: hi
+      
       run: |
-        echo "friend=akhil" >> "$GITHUB_OUTPUT"
         echo "name is ${{steps.pv.outputs.name}}"
         echo "job is ${{steps.pv.outputs.job}}"
-        echo "$GITHUB_OUTPUT"
+     
 
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
 
+    steps:
+      - name: pavan bhai
+        run: | 
+          echo "${{needs.job1.outputs.op1}}"
+          echo "${{needs.job1.outputs.op2}}"
+          
     
