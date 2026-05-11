@@ -1,0 +1,15 @@
+name: pathans-lab
+
+on:
+ push:
+   branches: main
+
+jobs:
+  job1:
+   runs-on: ubuntu-latest
+   
+   steps:
+     - name: kitkat
+       run: |
+         echo "this is kitkat"
+         
