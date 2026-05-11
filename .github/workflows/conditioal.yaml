@@ -1,7 +1,11 @@
 name: pathans-lab
-
+run-name: our workflow ${{inputs.name}}
 on:
  workflow_dispatch: 
+    inputs:
+      name:
+        type: string
+        default: conditional
 
 jobs:
   job1:
@@ -9,7 +13,7 @@ jobs:
    
    steps:
      - name: kitkat
-       if: ${{github.event_name == 'push'}}
+       if: ${{github.event_name == 'push' || github.event_name == 'workflow_dispatch'}}
        run: |
          echo "this is kitkat-${{github.event_name}}"
-         
+
