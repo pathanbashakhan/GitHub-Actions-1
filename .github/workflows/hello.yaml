@@ -11,7 +11,7 @@ jobs:
    steps:
     - name: yamdooing
       id: pv
-      run: echo "name=basha >> $GITHUB_OUTPUT"
+      run: echo "name=basha" >> "$GITHUB_OUTPUT"
     
     - name: yamlfile
       run: echo "${{steps.pv.outputs.name}}"
