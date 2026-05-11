@@ -10,5 +10,8 @@ jobs:
 
    steps:
     - name: yamdooing
-      run: echo "ntg just trying to writing a yaml file"
-      
+      id: pv
+      run: echo "name=basha >> $GITHUB_OUTPUT"
+    
+    - name: yamlfile
+      run: echo "${{steps.pv.outputs.name}}"
