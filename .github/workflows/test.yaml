@@ -1,0 +1,25 @@
+name: outputs
+
+on:
+ push: 
+    branches: main
+
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        outputs:
+            opt1: ${{steps.pr.outputs.name}}
+        
+        steps:
+            - name: hello 
+              id: pr
+              run: |
+               echo "name=pathan" >> "$GITHUB_OUTPUT"
+                
+    job2:
+        runs-on: ubuntu-latest
+        needs: job1
+        steps:
+            - name: hii
+              run: |
+               echo "${{needs.job1.outputs.opt1}}"
