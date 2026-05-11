@@ -18,7 +18,7 @@ jobs:
        run: |
          echo "this is kitkat-${{github.event_name}}"
      - name: 5star
-       if: env.job == 'sre'
+       if: env.job == 'devops'
        run: |
         echo "normal step no condition"
 
