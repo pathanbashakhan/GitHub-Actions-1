@@ -24,9 +24,9 @@ jobs:
               uses: actions/download-artifact@v8
               with:
                 name: pavan
-                path: pathan.txt
+                path: .
             - name: printing the file
               run: |
-               cat pathan.txt
+               cat ./pathan.txt
 
 
