@@ -30,6 +30,6 @@ jobs:
                 path: akhil
             - name: printing the file
               run: |
-               cat /pathan.txt
+               cat pathan.txt
 
 
