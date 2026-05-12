@@ -1,0 +1,25 @@
+name: pathans-lab
+run-name: our workflow ${{inputs.name}}
+on:
+ workflow_dispatch: 
+    inputs:
+      name:
+        type: string
+        default: conditional
+
+jobs:
+  job1:
+   runs-on: ubuntu-latest
+   if: inputs.name == 'pathan'
+   env: 
+    job: "devops"
+   steps:
+     - name: kitkat
+       if: ${{github.event_name == 'push'}}
+       run: |
+         echo "this is kitkat-${{github.event_name}}"
+     - name: 5star
+       if: env.job == 'devops'
+       run: |
+        echo "normal step no condition"
+
