@@ -1,0 +1,19 @@
+name: custom actions
+
+on:
+    workflow_dispatch: 
+
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+         
+        - name: creating a file
+          run: |
+            echo "hello how are you" >> 'pathan.txt'
+        - name: uploading the artifact
+          uses: actions/upload-artifact@v7
+          with:
+            name: pavan     
+            path: pathan.txt
+
